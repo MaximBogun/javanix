@@ -1,0 +1,2 @@
+
+./gradlew shadowJar && cp build/libs/project-javanix-all.jar docker && cd docker && docker build -t project-javanix . && docker run --rm -it --name project-javanix -p "8081:8081" --env REDIS_HOST=host.docker.internal:6379 project-javanix
